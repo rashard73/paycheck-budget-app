@@ -1,0 +1,75 @@
+
+{% extends "base.html" %}
+
+{% block title %}My Paychecks{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>My Paychecks</h1>
+
+    <a href="{{ url_for('add_paycheck_form') }}"
+       class="btn btn-primary">
+        + Add Paycheck
+    </a>
+</div>
+
+<div class="row g-3">
+
+    {% for paycheck in paychecks %}
+
+    <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+
+                <h5 class="card-title text-muted">
+                    Paycheck #{{ paycheck[0] }}
+                </h5>
+
+                <h2>
+                    ${{ "%.2f"|format(paycheck[1] / 100) }}
+                </h2>
+
+                <p class="text-muted">
+                    Received: {{ paycheck[2] }}
+                </p>
+
+                
+<div class="d-flex flex-wrap gap-2">
+
+    <a href="{{ url_for('show_bills', paycheck_id=paycheck[0]) }}"
+       class="btn btn-outline-primary">
+        View Budget
+    </a>
+
+    <a href="{{ url_for('edit_paycheck_form', paycheck_id=paycheck[0]) }}"
+       class="btn btn-outline-secondary">
+        Edit
+    </a>
+
+    <form method="POST"
+          action="{{ url_for('delete_paycheck_route', paycheck_id=paycheck[0]) }}"
+          onsubmit="return confirm('Delete this paycheck AND all its associated bills and savings? This cannot be undone.');">
+
+        <button type="submit"
+                class="btn btn-outline-danger">
+            Delete
+        </button>
+    </form>
+
+</div>
+
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+
+    <p>No paychecks yet. Add your first paycheck to get started.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+

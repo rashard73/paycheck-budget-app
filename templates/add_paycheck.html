@@ -1,0 +1,53 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}Add Paycheck{% endblock %}
+
+{% block content %}
+
+<div class="card shadow-sm mx-auto" style="max-width: 550px;">
+    <div class="card-body p-4">
+
+        <h2 class="mb-4">Add Paycheck</h2>
+
+        <form action="{{ url_for('add_paycheck_form') }}" method="POST">
+
+            <div class="mb-3">
+                <label for="amount" class="form-label">
+                    Paycheck Amount
+                </label>
+                <input type="number"
+                       id="amount"
+                       name="amount"
+                       class="form-control"
+                       min="0.01"
+                       step="0.01"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label for="date_received" class="form-label">
+                    Date Received
+                </label>
+                <input type="date"
+                       id="date_received"
+                       name="date_received"
+                       class="form-control"
+                       required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Save Paycheck
+            </button>
+
+            <a href="{{ url_for('show_paychecks') }}"
+               class="btn btn-outline-secondary">
+                Cancel
+            </a>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
