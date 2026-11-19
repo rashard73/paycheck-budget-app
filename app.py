@@ -42,7 +42,7 @@ def add_paycheck_form():
 
         try:
             date.fromisoformat(date_received)
-        except ValueError:
+        except (ValueError, TypeError):
             return "Invalid paycheck date.", 400
 
         try:
@@ -294,5 +294,5 @@ def manage_savings(paycheck_id):
     )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
