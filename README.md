@@ -38,7 +38,6 @@ This application helps users create a budget for each paycheck and understand ho
 <img width="1111" height="684" alt="Budget-Dashboard" src="https://github.com/user-attachments/assets/571ccd1c-554b-4b28-b99e-7049b80a5078" />
 
 
-*Add screenshots of the paycheck overview and budget dashboard here.*
 
 ## Installation
 
