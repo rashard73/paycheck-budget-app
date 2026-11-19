@@ -31,14 +31,20 @@ This application helps users create a budget for each paycheck and understand ho
 
 ## Screenshots
 
-*Add screenshots of the paycheck overview and budget dashboard here.*
+### Paycheck Overview
+<img width="1108" height="683" alt="Paycheck-Overview" src="https://github.com/user-attachments/assets/83ccee78-82e0-48c9-b407-cb94a80b2c46" />
+
+### Budget Dashboard
+<img width="1111" height="684" alt="Budget-Dashboard" src="https://github.com/user-attachments/assets/571ccd1c-554b-4b28-b99e-7049b80a5078" />
+
+
 
 ## Installation
 
 1. Clone the repository.
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/paycheck-budget-app.git
+   git clone https://github.com/rashard73/paycheck-budget-app.git
    cd paycheck-budget-app
    ```
 
